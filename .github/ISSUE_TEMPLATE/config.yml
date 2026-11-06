@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://github.com/Visuno/docs
+    about: Component usage and examples.
+  - name: Components source
+    url: https://github.com/Visuno/components
+    about: The library code for all four frameworks.

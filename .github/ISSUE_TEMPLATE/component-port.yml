@@ -1,0 +1,45 @@
+name: Component port
+description: Track porting one component to a framework target
+title: "[port] <component> — <framework>"
+labels: ["port"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One issue per component per derived framework (Angular or Flutter). Vanilla and React
+        are fetched from the registry and do not need a port issue.
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      description: The component name as in TODO.md (kebab-case).
+      placeholder: status-pill
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Target framework
+      options:
+        - Angular
+        - Flutter
+    validations:
+      required: true
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done (see GOALS.md)
+      options:
+        - label: Reference (Vanilla + React) is fetched into components/
+        - label: Port created; inputs mirror the React props
+        - label: Tokens only — no hard-coded colors, radii, or spacing
+        - label: Works in light, dark, and (web) Soft style
+        - label: Accessibility preserved (ARIA, focus, reduced motion)
+        - label: Flutter only — `flutter analyze` reports 0 issues
+        - label: Docs page added with code for all four frameworks
+        - label: TODO.md updated
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything tricky about this port (motion, popovers, charts, etc.).
